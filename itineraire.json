@@ -1,0 +1,245 @@
+{
+  "pays": "Brésil",
+  "drapeau": "🇧🇷",
+  "symbole": "🪁",
+  "titre": "Jericoacoara: Entre Dunes, Lagunes et Alizés",
+  "budget": "2000€",
+  "duree": "10 jours",
+  "temps_vol": "Environ 12h à 15h avec escale",
+  "jours": [
+    {
+      "jour": 1,
+      "symbole": "✈️",
+      "titre": "Arrivée au Paradis des Vents",
+      "legende": "Longue journée de voyage pour atteindre la destination finale. Après l'atterrissage à Fortaleza, l'aventure commence réellement avec le transfert en 4x4 qui vous mènera à travers des paysages changeants jusqu'aux rues de sable de Jericoacoara. L'arrivée au village, coupé du monde, est une expérience en soi qui marque le début d'une déconnexion totale.",
+      "lieu": "Fortaleza & Jericoacoara",
+      "activites": [
+        "✈️ <strong>Vol Paris - Fortaleza</strong>: Traversez l'Atlantique pour rejoindre le soleil et l'énergie du Nordeste brésilien.",
+        "🚙 <strong>Transfert 4x4 vers Jericoacoara</strong>: Vivez une transition de 5 heures entre la civilisation et un paradis isolé, en terminant par la conduite sur les plages et les dunes."
+      ],
+      "illustration": "jour1.jpg",
+      "encarts": [
+        {
+          "symbole": "ℹ️",
+          "titre": "À savoir",
+          "texte": "Le transfert final en 4x4 est obligatoire car le village est au cœur d'un parc national protégé. Réservez-le en avance, surtout en haute saison."
+        }
+      ]
+    },
+    {
+      "jour": 2,
+      "symbole": "🌴",
+      "titre": "Premiers Pas et Coucher de Soleil Magique",
+      "legende": "Après le long voyage de la veille, cette journée est dédiée à l'acclimatation en douceur. Imprégnez-vous de l'ambiance bohème du village en vous promenant pieds nus dans le sable. La journée se termine par le rituel incontournable du coucher de soleil depuis le sommet de la grande dune, un moment de communion partagé par tous.",
+      "lieu": "Jericoacoara (Village)",
+      "activites": [
+        "🚶‍♂️ <strong>Découverte du village</strong>: Flânez sans but dans les ruelles ensablées, entre boutiques d'artisanat, restaurants charmants et écoles de kitesurf.",
+        "🌅 <strong>Coucher de soleil sur la Dune du Pôr do Sol</strong>: Rejoignez la foule pour grimper sur cette dune emblématique et admirer le soleil plonger directement dans l'océan, un spectacle quotidien hypnotisant."
+      ],
+      "illustration": "jour2.jpg",
+      "encarts": [
+        {
+          "symbole": "💰",
+          "titre": "Astuce Argent",
+          "texte": "Il n'y a pas de banque et peu de distributeurs à Jeri. Prévoyez suffisamment d'argent liquide pour les petites dépenses et les excursions."
+        }
+      ]
+    },
+    {
+      "jour": 3,
+      "symbole": "🏞️",
+      "titre": "Lagunes d'Émeraude et Arbres de la Paresse",
+      "legende": "Partez à l'aventure en buggy pour une journée d'exploration de la côte Est. Ce circuit classique est un enchaînement de paysages de carte postale. Entre l'arbre couché par le vent et les lagons d'eau douce, vous découvrirez pourquoi la région est si prisée. Le clou du spectacle reste la détente dans les hamacs immergés de la Lagoa do Paraíso.",
+      "lieu": "Côte Est de Jericoacoara",
+      "activites": [
+        "🌳 <strong>Arrêt à l'Árvore da Preguiça</strong>: Immortalisez cet arbre unique, sculpté par la force des alizés, devenu un symbole de la résilience de la nature locale.",
+        "💧 <strong>Détente à la Lagoa do Paraíso</strong>: Prélassez-vous dans les célèbres hamacs sur l'eau de ce lagon aux couleurs turquoise, un véritable havre de paix."
+      ],
+      "illustration": "jour3.jpg",
+      "encarts": [
+        {
+          "symbole": "🛺",
+          "titre": "Excursion",
+          "texte": "Négociez le prix de votre tour en buggy directement avec les chauffeurs sur la plage. Vous pouvez privatiser un buggy ou partager les frais."
+        }
+      ]
+    },
+    {
+      "jour": 4,
+      "symbole": "🪁",
+      "titre": "Au Gré des Alizés",
+      "legende": "Jericoacoara est l'un des meilleurs spots au monde pour les sports de vent. Que vous soyez novice ou expert, dédiez cette journée à la glisse. Les vents constants et la baie protégée offrent des conditions idéales pour s'initier au kitesurf ou au windsurf, ou simplement pour admirer le ballet incessant des voiles colorées.",
+      "lieu": "Plage de Jericoacoara",
+      "activites": [
+        "🪁 <strong>Initiation ou perfectionnement au Kitesurf</strong>: Réservez un cours dans l'une des nombreuses écoles réputées et ressentez l'adrénaline de la glisse tracté par le vent.",
+        "🍹 <strong>Relaxation au ClubVentos</strong>: Sirotez une caïpirinha les pieds dans le sable dans ce beach club mythique, le point de rendez-vous des passionnés de glisse."
+      ],
+      "illustration": "jour4.jpg",
+      "encarts": [
+        {
+          "symbole": "🌬️",
+          "titre": "Conseil Sportif",
+          "texte": "Les vents sont généralement plus légers le matin, ce qui est idéal pour les débutants. Ils se renforcent l'après-midi pour le plus grand plaisir des experts."
+        }
+      ]
+    },
+    {
+      "jour": 5,
+      "symbole": "🏜️",
+      "titre": "Mangroves et Chevaux Marins",
+      "legende": "Explorez la côte Ouest, plus sauvage et authentique. L'excursion en buggy vous mènera à travers des paysages variés, d'une traversée en bac à la découverte d'un écosystème fragile. La journée est rythmée par une balade en barque pour observer les hippocampes, des sensations fortes sur les dunes et une baignade rafraîchissante.",
+      "lieu": "Côte Ouest de Jericoacoara",
+      "activites": [
+        "🛶 <strong>Excursion dans la mangrove de Guriú</strong>: Embarquez sur une barque traditionnelle pour une observation respectueuse des fascinants hippocampes dans leur habitat naturel.",
+        "🏜️ <strong>Dunes et baignade à Tatajuba</strong>: Vivez l'expérience du 'skibunda' (surf sur sable) avant de piquer une tête dans le lagon du village de pêcheurs de Tatajuba."
+      ],
+      "illustration": "jour5.jpg",
+      "encarts": [
+        {
+          "symbole": "☀️",
+          "titre": "Protection",
+          "texte": "Le soleil et la réverbération sur le sable sont intenses. N'oubliez pas crème solaire, chapeau, lunettes de soleil et un lycra pour les activités nautiques."
+        }
+      ]
+    },
+    {
+      "jour": 6,
+      "symbole": "🧘‍♀️",
+      "titre": "Journée Douceur et Saveurs Locales",
+      "legende": "Accordez-vous une pause dans le rythme des excursions pour vivre au tempo de Jeri. Profitez de la plage principale, dégustez un poisson grillé fraîchement pêché dans un restaurant de bord de mer. En fin de journée, laissez-vous porter par les rythmes de la capoeira, une immersion culturelle et énergétique face au soleil couchant.",
+      "lieu": "Jericoacoara (Village)",
+      "activites": [
+        "🏖️ <strong>Farniente sur la plage principale</strong>: Louez un transat et profitez simplement du soleil, de la mer et de l'ambiance unique du village.",
+        "🤸‍♂️ <strong>Spectacle de Capoeira</strong>: Au coucher du soleil, assistez à une 'roda' de capoeira sur la plage, un mélange impressionnant d'art martial, de danse et de musique."
+      ],
+      "illustration": "jour6.jpg",
+      "encarts": [
+        {
+          "symbole": "🍤",
+          "titre": "Gastronomie",
+          "texte": "Ne partez pas sans avoir goûté une 'moqueca', un ragoût de poisson ou de crevettes au lait de coco, plat emblématique de la cuisine brésilienne."
+        }
+      ]
+    },
+    {
+      "jour": 7,
+      "symbole": "🗿",
+      "titre": "L'Arche Naturelle de Pedra Furada",
+      "legende": "Partez à la découverte de l'autre emblème de Jericoacoara, la Pedra Furada. Cette arche de pierre sculptée par l'océan est le but d'une agréable randonnée le long de la côte. Le jeu de lumière à travers la roche offre un spectacle saisissant et une récompense bien méritée après l'effort de la marche sur les rochers.",
+      "lieu": "Pedra Furada",
+      "activites": [
+        "🚶‍♀️ <strong>Randonnée vers la Pedra Furada</strong>: Empruntez le sentier côtier pour une balade d'environ 45 minutes offrant des vues spectaculaires sur l'océan Atlantique.",
+        "📸 <strong>Séance photo devant l'arche</strong>: C'est le spot photo iconique de Jeri. En juillet, le soleil se couche exactement dans l'arche, un moment magique."
+      ],
+      "illustration": "jour7.jpg",
+      "encarts": [
+        {
+          "symbole": "🌊",
+          "titre": "Marées",
+          "texte": "Consultez impérativement les horaires des marées avant de partir. La randonnée par la plage n'est possible et sécurisée qu'à marée basse."
+        }
+      ]
+    },
+    {
+      "jour": 8,
+      "symbole": "🏄‍♂️",
+      "titre": "Journée Libre : Glisse ou Farniente",
+      "legende": "Cette journée est la vôtre. Profitez-en pour retourner sur votre site préféré, que ce soit une lagune pour vous détendre ou la baie pour une nouvelle session de glisse. C'est aussi l'occasion de vous essayer à une nouvelle activité comme le stand-up paddle ou de dénicher des souvenirs uniques dans les boutiques du village.",
+      "lieu": "Jericoacoara et ses environs",
+      "activites": [
+        "🏄‍♂️ <strong>Session de Stand-Up Paddle</strong>: Profitez des eaux plus calmes du matin près de la Dune du Pôr do Sol pour une balade relaxante en paddle.",
+        "🛍️ <strong>Shopping artisanal</strong>: Dénichez des souvenirs uniques comme les célèbres hamacs en coton, des bijoux en capim dourado ou des objets en cuir."
+      ],
+      "illustration": "jour8.jpg",
+      "encarts": [
+        {
+          "symbole": "🤫",
+          "titre": "Spot Secret",
+          "texte": "Demandez à un buggy de vous emmener à la Lagoa do Amâncio, moins fréquentée et plus sauvage que ses voisines."
+        }
+      ]
+    },
+    {
+      "jour": 9,
+      "symbole": "🚙",
+      "titre": "Derniers Instants et Route vers Fortaleza",
+      "legende": "Profitez d'une dernière matinée dans ce paradis. Un dernier bain de mer, un dernier açaï bowl face à l'océan pour graver ces souvenirs. L'après-midi est consacré au voyage retour vers Fortaleza, en traversant une dernière fois les paysages désertiques du Ceará, avec un regard nostalgique sur les dunes qui s'éloignent.",
+      "lieu": "Jericoacoara & Fortaleza",
+      "activites": [
+        "☕ <strong>Dernier petit-déjeuner brésilien</strong>: Savourez les fruits tropicaux frais et le pão de queijo une dernière fois avant de faire vos bagages.",
+        "🚙 <strong>Retour vers Fortaleza</strong>: Le trajet retour en 4x4 est l'occasion de revoir les paysages et de mesurer le chemin parcouru depuis votre arrivée."
+      ],
+      "illustration": "jour9.jpg",
+      "encarts": [
+        {
+          "symbole": "⏰",
+          "titre": "Organisation",
+          "texte": "Confirmez votre heure de départ avec votre chauffeur la veille. Prévoyez une marge de sécurité pour arriver à Fortaleza sans stress."
+        }
+      ]
+    },
+    {
+      "jour": 10,
+      "symbole": "🛫",
+      "titre": "Départ de Fortaleza",
+      "legende": "Selon l'horaire de votre vol, vous aurez peut-être le temps pour une dernière immersion dans la culture locale au grand marché de Fortaleza. C'est le moment de faire le plein de souvenirs avant de vous diriger vers l'aéroport pour votre vol retour vers Paris, la tête remplie d'images et de la chaleur du Brésil.",
+      "lieu": "Fortaleza",
+      "activites": [
+        "🛍️ <strong>Visite du Mercado Central (optionnel)</strong>: Si le temps le permet, plongez dans l'effervescence de ce marché artisanal sur plusieurs étages.",
+        "🛫 <strong>Vol retour Fortaleza - Paris</strong>: Embarquement pour le vol, souvent de nuit, qui vous ramènera en Europe."
+      ],
+      "illustration": "jour10.jpg",
+      "encarts": [
+        {
+          "symbole": "⚖️",
+          "titre": "Bagages",
+          "texte": "Pesez vos bagages avant de partir pour l'aéroport pour éviter les mauvaises surprises de surcoût pour l'excédent de poids."
+        }
+      ]
+    }
+  ],
+  "periodes_ideales": [
+    {
+      "titre": "Les périodes idéales pour ce séjour sont les mois de juillet à décembre, pour la saison sèche et les vents forts.",
+      "symbole": "☀️"
+    }
+  ],
+  "infos_pratiques": [
+    {
+      "titre": "Climat tropical avec une saison sèche (juillet-décembre). Températures autour de 30°C. Prévoir vêtements légers et un coupe-vent pour le soir.",
+      "symbole": "🌡️"
+    },
+    {
+      "titre": "La monnaie est le Real brésilien (BRL). Peu de distributeurs à Jeri, prévoir du liquide même si les cartes sont de plus en plus acceptées.",
+      "symbole": "💳"
+    },
+    {
+      "titre": "Aucun vaccin obligatoire. Protection solaire (crème, chapeau, lunettes) et anti-moustiques indispensables.",
+      "symbole": "🦟"
+    },
+    {
+      "titre": "Le Wifi est disponible dans la plupart des hôtels, mais le débit peut être lent. Une eSIM ou SIM locale (ex: Claro) est une bonne option.",
+      "symbole": "📶"
+    }
+  ],
+  "liens_utiles": [
+    {
+      "legende": "Informations sur la destination",
+      "titre": "Guide de Jericoacoara",
+      "url": "https://www.jericoacoara.com.br/",
+      "symbole": "📘"
+    },
+    {
+      "legende": "Prévisions des vents pour les sports nautiques",
+      "titre": "Windguru Jericoacoara",
+      "url": "https://www.windguru.cz/115",
+      "symbole": "🌬️"
+    },
+    {
+      "legende": "Conseils aux voyageurs par le gouvernement",
+      "titre": "France Diplomatie - Brésil",
+      "url": "https://www.diplomatie.gouv.fr/fr/conseils-aux-voyageurs/conseils-par-pays-destination/bresil/",
+      "symbole": "⚠️"
+    }
+  ]
+}
