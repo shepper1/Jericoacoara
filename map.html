@@ -1,0 +1,64 @@
+
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carte du voyage - undefined</title>
+  <style>
+    body { margin: 0; padding: 0; font-family: Arial, sans-serif; }
+    #map { height: 100vh; width: 100%; }
+    .info-window { max-width: 250px; font-family: Arial, sans-serif; }
+    .info-window img { width: 100%; height: auto; border-radius: 8px; margin-bottom: 10px; }
+    .info-window h3 { margin: 0 0 5px 0; font-size: 16px; color: #333; }
+    .info-window p { margin: 5px 0; font-size: 14px; color: #666; }
+    .info-window a { color: #1a73e8; text-decoration: none; }
+    .info-window a:hover { text-decoration: underline; }
+  </style>
+</head>
+<body>
+  <div id="map"></div>
+  
+  <script>
+    function initMap() {
+      const center = { lat: -3.606007366666666, lng: -40.49813537777778 };
+      const map = new google.maps.Map(document.getElementById('map'), {
+        zoom: 10,
+        center: center
+      });
+      
+      const markers = [{"lat":-2.8993062,"lng":-40.4509652,"name":"Fortaleza & Jericoacoara","jour":1,"titre":"Arrivée au Paradis des Vents","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-2.8993062,-40.4509652&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-2.8993062,-40.4509652","aiImageUrl":"jour1.jpg"},{"lat":-2.7973876,"lng":-40.5124031,"name":"Jericoacoara (Village)","jour":2,"titre":"Premiers Pas et Coucher de Soleil Magique","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-2.7973876,-40.5124031&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-2.7973876,-40.5124031","aiImageUrl":"jour2.jpg"},{"lat":-2.7973876,"lng":-40.5124031,"name":"Côte Est de Jericoacoara","jour":3,"titre":"Lagunes d'Émeraude et Arbres de la Paresse","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-2.7973876,-40.5124031&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-2.7973876,-40.5124031","aiImageUrl":"jour3.jpg"},{"lat":-2.7973876,"lng":-40.5124031,"name":"Plage de Jericoacoara","jour":4,"titre":"Au Gré des Alizés","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-2.7973876,-40.5124031&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-2.7973876,-40.5124031","aiImageUrl":"jour4.jpg"},{"lat":-2.8993062,"lng":-40.4509652,"name":"Côte Ouest de Jericoacoara","jour":5,"titre":"Mangroves et Chevaux Marins","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-2.8993062,-40.4509652&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-2.8993062,-40.4509652","aiImageUrl":"jour5.jpg"},{"lat":-8.833877,"lng":-42.553697,"name":"Pedra Furada","jour":7,"titre":"L'Arche Naturelle de Pedra Furada","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-8.833877,-42.553697&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-8.833877,-42.553697","aiImageUrl":"jour7.jpg"},{"lat":-2.7973876,"lng":-40.5124031,"name":"Jericoacoara et ses environs","jour":8,"titre":"Journée Libre : Glisse ou Farniente","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-2.7973876,-40.5124031&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-2.7973876,-40.5124031","aiImageUrl":"jour8.jpg"},{"lat":-2.8993062,"lng":-40.4509652,"name":"Jericoacoara & Fortaleza","jour":9,"titre":"Derniers Instants et Route vers Fortaleza","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-2.8993062,-40.4509652&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-2.8993062,-40.4509652","aiImageUrl":"jour9.jpg"},{"lat":-3.7327203,"lng":-38.5270134,"name":"Fortaleza","jour":10,"titre":"Départ de Fortaleza","streetViewUrl":"https://maps.googleapis.com/maps/api/streetview?size=600x400&location=-3.7327203,-38.5270134&key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q","streetViewLinkUrl":"https://www.google.com/maps/@?api=1&map_action=pano&viewpoint=-3.7327203,-38.5270134","aiImageUrl":"jour10.jpg"}];
+      
+      markers.forEach((markerData) => {
+        const marker = new google.maps.Marker({
+          position: { lat: markerData.lat, lng: markerData.lng },
+          map: map,
+          title: markerData.name,
+          label: String(markerData.jour)
+        });
+        
+        const contentString = `
+          <div class="info-window">
+            <img src="${markerData.streetViewUrl}" alt="Street View de ${markerData.name}" />
+            <h3>Jour ${markerData.jour}</h3>
+            <p><strong>${markerData.name}</strong></p>
+            <p><a href="${markerData.streetViewLinkUrl}" target="_blank" rel="noopener noreferrer"><strong>${markerData.titre}</strong></a></p>
+          </div>
+        `;
+        
+        const infoWindow = new google.maps.InfoWindow({
+          content: contentString
+        });
+        
+        marker.addListener('click', () => {
+          infoWindow.open(map, marker);
+        });
+      });
+    }
+  </script>
+  
+  <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBXsVY9wZUc8Q9VnK5oYDc8bBNvzvfDH4Q&callback=initMap">
+  </script>
+</body>
+</html>
