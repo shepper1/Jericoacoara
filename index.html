@@ -1,0 +1,542 @@
+
+<!DOCTYPE html>
+<html lang="fr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jericoacoara: Entre Dunes, Lagunes et Alizés </title>
+    <link rel="icon" type="image/png" href="favicon.png" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        template: {
+                            sable: '#F3E5AB',
+                            ocre: '#C66B3D',
+                            roche: '#2D2A26',
+                            ciel: '#4A6C6F',
+                            bg: '#FAFAF9'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        serif: ['Playfair Display', 'serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { overflow-x: hidden; }
+        
+        /* Ligne verticale de la timeline */
+        .timeline-line {
+            position: absolute;
+            left: 24px;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #E5E7EB;
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .timeline-line { left: 50%; margin-left: -1px; }
+        }
+
+        /* Style des cartes Info */
+        .tip-card {
+            border-left: 4px solid #C66B3D;
+            background-color: #FFF7ED;
+        }
+
+        /* Masquer la scrollbar de la nav mobile tout en gardant le scroll */
+        .hide-scroll::-webkit-scrollbar { display: none; }
+        .hide-scroll { -ms-overflow-style: none; scrollbar-width: none; }
+    </style>
+</head>
+<body class="bg-template-bg text-template-roche antialiased">
+
+    <nav id="nav-desktop" class="hidden md:flex fixed top-0 w-full z-50 bg-white/90 backdrop-blur border-b border-gray-200 py-4 px-8 justify-between items-center shadow-sm transition-transform duration-300 -translate-y-full">
+        <a href="#top" class="text-xl font-serif font-bold tracking-widest text-template-roche">Jericoacoara: Entre Dunes, Lagunes et Alizés</a>
+        <div class="space-x-6 text-sm font-bold text-gray-600">
+            <a href="#jour-1" class="nav-item-desktop hover:text-template-ocre transition">Le Parcours</a>
+            <a href="#pratique" class="nav-item-desktop hover:text-template-ocre transition">Infos Pratiques</a>
+        </div>
+    </nav>
+
+    <nav id="nav-mobile" class="md:hidden fixed top-0 w-full z-50 bg-white/95 backdrop-blur border-b border-gray-200 py-3 pl-4 overflow-x-auto hide-scroll whitespace-nowrap shadow-md transition-transform duration-300 -translate-y-full">
+        <div class="flex space-x-2 pr-4" id="mobile-menu-container">
+            <a href="#top" class="inline-block px-3 py-1 bg-template-roche text-white rounded-full text-xs font-bold shadow-sm">Top</a>
+            
+                <a href="#jour-1" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J1 Arrivée au Paradis des Vents</a>
+            
+                <a href="#jour-2" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J2 Premiers Pas et Coucher de Soleil Magique</a>
+            
+                <a href="#jour-3" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J3 Lagunes d'Émeraude et Arbres de la Paresse</a>
+            
+                <a href="#jour-4" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J4 Au Gré des Alizés</a>
+            
+                <a href="#jour-5" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J5 Mangroves et Chevaux Marins</a>
+            
+                <a href="#jour-6" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J6 Journée Douceur et Saveurs Locales</a>
+            
+                <a href="#jour-7" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J7 L'Arche Naturelle de Pedra Furada</a>
+            
+                <a href="#jour-8" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J8 Journée Libre : Glisse ou Farniente</a>
+            
+                <a href="#jour-9" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J9 Derniers Instants et Route vers Fortaleza</a>
+            
+                <a href="#jour-10" class="mobile-link inline-block px-3 py-1 bg-gray-100 text-gray-700 rounded-full text-xs font-bold hover:bg-template-sable transition-all duration-300">J10 Départ de Fortaleza</a>
+            
+            <a href="#pratique" class="mobile-link inline-block px-3 py-1 border border-gray-300 text-gray-500 rounded-full text-xs font-bold">Infos</a>
+        </div>
+    </nav>
+
+    <header id="top" class="relative h-[85vh] flex items-center justify-center overflow-hidden pt-12 md:pt-0">
+        
+        <div class="absolute inset-0 bg-black/50 z-10"></div>
+
+        <video autoplay muted loop playsinline 
+               poster="https://images.unsplash.com/photo-1579606946838-6db34433f3c0?q=80&w=2070"
+               class="absolute inset-0 w-full h-full object-cover">
+            <source src="https://videos.pexels.com/video-files/4456988/4456988-hd_1920_1080_25fps.mp4" type="video/mp4">
+            Votre navigateur ne supporte pas la vidéo.
+        </video>
+        
+        <div class="relative z-20 text-center text-white px-4 max-w-3xl animate-fade-in-up">
+            <p class="font-sans text-template-sable tracking-[0.3em] mb-4 uppercase text-sm font-semibold">Feuille de Route</p>
+            <h1 class="font-Playfair italic text-5xl md:text-8xl mb-6 leading-tight drop-shadow-lg">Jericoacoara</h1>
+            <p class="font-sans text-lg md:text-xl text-gray-100 mb-10 font-light max-w-2xl mx-auto leading-relaxed">Jericoacoara: Entre Dunes, Lagunes et Alizés</p>
+            
+            <div class="flex flex-wrap justify-center gap-4 text-sm font-bold mb-10">
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">🗓️ 10 jours</span>
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">💰 2000€ / pers</span>
+                <span class="bg-white/10 backdrop-blur-md px-5 py-2 rounded-full border border-white/20 shadow-sm">🛬 Environ 12h à 15h avec escale depuis Paris</span>
+            </div>
+
+        </div>
+    </header>
+
+    <section id="itineraire" class="max-w-6xl mx-auto px-4 py-20 relative">
+        
+        <div class="text-center mb-16">
+            <span class="text-template-ocre font-bold tracking-widest text-xs uppercase">Le Roadtrip</span>
+            <h2 class="font-serif text-4xl mt-2 text-template-roche">Votre Programme</h2>
+        </div>
+
+        <div class="relative">
+            <div class="timeline-line"></div>
+            
+            
+                <div id="jour-1" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 1</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Arrivée au Paradis des Vents</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Longue journée de voyage pour atteindre la destination finale. Après l'atterrissage à Fortaleza, l'aventure commence réellement avec le transfert en 4x4 qui vous mènera à travers des paysages changeants jusqu'aux rues de sable de Jericoacoara. L'arrivée au village, coupé du monde, est une expérience en soi qui marque le début d'une déconnexion totale.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>✈️ <strong>Vol Paris - Fortaleza</strong>: Traversez l'Atlantique pour rejoindre le soleil et l'énergie du Nordeste brésilien.</li>
+                            
+                                <li>🚙 <strong>Transfert 4x4 vers Jericoacoara</strong>: Vivez une transition de 5 heures entre la civilisation et un paradis isolé, en terminant par la conduite sur les plages et les dunes.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Jericoacoara/main/jour1.jpg" class="w-full h-64 object-cover" alt="Jour 1">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">ℹ️ À savoir</p>
+                                <p class="text-gray-700">Le transfert final en 4x4 est obligatoire car le village est au cœur d'un parc national protégé. Réservez-le en avance, surtout en haute saison.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-2" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 2</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Premiers Pas et Coucher de Soleil Magique</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Après le long voyage de la veille, cette journée est dédiée à l'acclimatation en douceur. Imprégnez-vous de l'ambiance bohème du village en vous promenant pieds nus dans le sable. La journée se termine par le rituel incontournable du coucher de soleil depuis le sommet de la grande dune, un moment de communion partagé par tous.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🚶‍♂️ <strong>Découverte du village</strong>: Flânez sans but dans les ruelles ensablées, entre boutiques d'artisanat, restaurants charmants et écoles de kitesurf.</li>
+                            
+                                <li>🌅 <strong>Coucher de soleil sur la Dune du Pôr do Sol</strong>: Rejoignez la foule pour grimper sur cette dune emblématique et admirer le soleil plonger directement dans l'océan, un spectacle quotidien hypnotisant.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Jericoacoara/main/jour2.jpg" class="w-full h-64 object-cover" alt="Jour 2">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">💰 Astuce Argent</p>
+                                <p class="text-gray-700">Il n'y a pas de banque et peu de distributeurs à Jeri. Prévoyez suffisamment d'argent liquide pour les petites dépenses et les excursions.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-3" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 3</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Lagunes d'Émeraude et Arbres de la Paresse</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Partez à l'aventure en buggy pour une journée d'exploration de la côte Est. Ce circuit classique est un enchaînement de paysages de carte postale. Entre l'arbre couché par le vent et les lagons d'eau douce, vous découvrirez pourquoi la région est si prisée. Le clou du spectacle reste la détente dans les hamacs immergés de la Lagoa do Paraíso.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🌳 <strong>Arrêt à l'Árvore da Preguiça</strong>: Immortalisez cet arbre unique, sculpté par la force des alizés, devenu un symbole de la résilience de la nature locale.</li>
+                            
+                                <li>💧 <strong>Détente à la Lagoa do Paraíso</strong>: Prélassez-vous dans les célèbres hamacs sur l'eau de ce lagon aux couleurs turquoise, un véritable havre de paix.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Jericoacoara/main/jour3.jpg" class="w-full h-64 object-cover" alt="Jour 3">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🛺 Excursion</p>
+                                <p class="text-gray-700">Négociez le prix de votre tour en buggy directement avec les chauffeurs sur la plage. Vous pouvez privatiser un buggy ou partager les frais.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-4" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 4</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Au Gré des Alizés</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Jericoacoara est l'un des meilleurs spots au monde pour les sports de vent. Que vous soyez novice ou expert, dédiez cette journée à la glisse. Les vents constants et la baie protégée offrent des conditions idéales pour s'initier au kitesurf ou au windsurf, ou simplement pour admirer le ballet incessant des voiles colorées.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🪁 <strong>Initiation ou perfectionnement au Kitesurf</strong>: Réservez un cours dans l'une des nombreuses écoles réputées et ressentez l'adrénaline de la glisse tracté par le vent.</li>
+                            
+                                <li>🍹 <strong>Relaxation au ClubVentos</strong>: Sirotez une caïpirinha les pieds dans le sable dans ce beach club mythique, le point de rendez-vous des passionnés de glisse.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Jericoacoara/main/jour4.jpg" class="w-full h-64 object-cover" alt="Jour 4">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🌬️ Conseil Sportif</p>
+                                <p class="text-gray-700">Les vents sont généralement plus légers le matin, ce qui est idéal pour les débutants. Ils se renforcent l'après-midi pour le plus grand plaisir des experts.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-5" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 5</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Mangroves et Chevaux Marins</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Explorez la côte Ouest, plus sauvage et authentique. L'excursion en buggy vous mènera à travers des paysages variés, d'une traversée en bac à la découverte d'un écosystème fragile. La journée est rythmée par une balade en barque pour observer les hippocampes, des sensations fortes sur les dunes et une baignade rafraîchissante.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🛶 <strong>Excursion dans la mangrove de Guriú</strong>: Embarquez sur une barque traditionnelle pour une observation respectueuse des fascinants hippocampes dans leur habitat naturel.</li>
+                            
+                                <li>🏜️ <strong>Dunes et baignade à Tatajuba</strong>: Vivez l'expérience du 'skibunda' (surf sur sable) avant de piquer une tête dans le lagon du village de pêcheurs de Tatajuba.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Jericoacoara/main/jour5.jpg" class="w-full h-64 object-cover" alt="Jour 5">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">☀️ Protection</p>
+                                <p class="text-gray-700">Le soleil et la réverbération sur le sable sont intenses. N'oubliez pas crème solaire, chapeau, lunettes de soleil et un lycra pour les activités nautiques.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-6" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 6</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Journée Douceur et Saveurs Locales</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Accordez-vous une pause dans le rythme des excursions pour vivre au tempo de Jeri. Profitez de la plage principale, dégustez un poisson grillé fraîchement pêché dans un restaurant de bord de mer. En fin de journée, laissez-vous porter par les rythmes de la capoeira, une immersion culturelle et énergétique face au soleil couchant.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🏖️ <strong>Farniente sur la plage principale</strong>: Louez un transat et profitez simplement du soleil, de la mer et de l'ambiance unique du village.</li>
+                            
+                                <li>🤸‍♂️ <strong>Spectacle de Capoeira</strong>: Au coucher du soleil, assistez à une 'roda' de capoeira sur la plage, un mélange impressionnant d'art martial, de danse et de musique.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Jericoacoara/main/jour6.jpg" class="w-full h-64 object-cover" alt="Jour 6">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🍤 Gastronomie</p>
+                                <p class="text-gray-700">Ne partez pas sans avoir goûté une 'moqueca', un ragoût de poisson ou de crevettes au lait de coco, plat emblématique de la cuisine brésilienne.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-7" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 7</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">L'Arche Naturelle de Pedra Furada</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Partez à la découverte de l'autre emblème de Jericoacoara, la Pedra Furada. Cette arche de pierre sculptée par l'océan est le but d'une agréable randonnée le long de la côte. Le jeu de lumière à travers la roche offre un spectacle saisissant et une récompense bien méritée après l'effort de la marche sur les rochers.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🚶‍♀️ <strong>Randonnée vers la Pedra Furada</strong>: Empruntez le sentier côtier pour une balade d'environ 45 minutes offrant des vues spectaculaires sur l'océan Atlantique.</li>
+                            
+                                <li>📸 <strong>Séance photo devant l'arche</strong>: C'est le spot photo iconique de Jeri. En juillet, le soleil se couche exactement dans l'arche, un moment magique.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Jericoacoara/main/jour7.jpg" class="w-full h-64 object-cover" alt="Jour 7">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🌊 Marées</p>
+                                <p class="text-gray-700">Consultez impérativement les horaires des marées avant de partir. La randonnée par la plage n'est possible et sécurisée qu'à marée basse.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-8" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ocre rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 8</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Journée Libre : Glisse ou Farniente</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Cette journée est la vôtre. Profitez-en pour retourner sur votre site préféré, que ce soit une lagune pour vous détendre ou la baie pour une nouvelle session de glisse. C'est aussi l'occasion de vous essayer à une nouvelle activité comme le stand-up paddle ou de dénicher des souvenirs uniques dans les boutiques du village.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🏄‍♂️ <strong>Session de Stand-Up Paddle</strong>: Profitez des eaux plus calmes du matin près de la Dune du Pôr do Sol pour une balade relaxante en paddle.</li>
+                            
+                                <li>🛍️ <strong>Shopping artisanal</strong>: Dénichez des souvenirs uniques comme les célèbres hamacs en coton, des bijoux en capim dourado ou des objets en cuir.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Jericoacoara/main/jour8.jpg" class="w-full h-64 object-cover" alt="Jour 8">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">🤫 Spot Secret</p>
+                                <p class="text-gray-700">Demandez à un buggy de vous emmener à la Lagoa do Amâncio, moins fréquentée et plus sauvage que ses voisines.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-9" class="section-etape relative z-10 mb-20 md:flex md:flex-row-reverse md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-ciel rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-left md:pl-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 9</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Derniers Instants et Route vers Fortaleza</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Profitez d'une dernière matinée dans ce paradis. Un dernier bain de mer, un dernier açaï bowl face à l'océan pour graver ces souvenirs. L'après-midi est consacré au voyage retour vers Fortaleza, en traversant une dernière fois les paysages désertiques du Ceará, avec un regard nostalgique sur les dunes qui s'éloignent.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>☕ <strong>Dernier petit-déjeuner brésilien</strong>: Savourez les fruits tropicaux frais et le pão de queijo une dernière fois avant de faire vos bagages.</li>
+                            
+                                <li>🚙 <strong>Retour vers Fortaleza</strong>: Le trajet retour en 4x4 est l'occasion de revoir les paysages et de mesurer le chemin parcouru depuis votre arrivée.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pr-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Jericoacoara/main/jour9.jpg" class="w-full h-64 object-cover" alt="Jour 9">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⏰ Organisation</p>
+                                <p class="text-gray-700">Confirmez votre heure de départ avec votre chauffeur la veille. Prévoyez une marge de sécurité pour arriver à Fortaleza sans stress.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+                <div id="jour-10" class="section-etape relative z-10 mb-20 md:flex  md:justify-between items-start group scroll-mt-32">
+                    
+                    <div class="absolute left-6 md:left-1/2 transform -translate-x-1/2 w-8 h-8 bg-template-roche rounded-full border-4 border-white shadow-lg flex items-center justify-center z-20"></div>
+                    
+                    <div class="md:w-[45%] pl-14 md:text-right md:pr-12">
+                        <span class="font-serif text-3xl block text-template-roche mb-2">Jour 10</span>
+                        <h3 class="text-xl font-bold text-gray-800 mb-3">Départ de Fortaleza</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed italic mb-4">Selon l'horaire de votre vol, vous aurez peut-être le temps pour une dernière immersion dans la culture locale au grand marché de Fortaleza. C'est le moment de faire le plein de souvenirs avant de vous diriger vers l'aéroport pour votre vol retour vers Paris, la tête remplie d'images et de la chaleur du Brésil.</p>
+                        <ul class="text-sm text-gray-700 space-y-2 inline-block text-left">
+                            
+                                <li>🛍️ <strong>Visite du Mercado Central (optionnel)</strong>: Si le temps le permet, plongez dans l'effervescence de ce marché artisanal sur plusieurs étages.</li>
+                            
+                                <li>🛫 <strong>Vol retour Fortaleza - Paris</strong>: Embarquement pour le vol, souvent de nuit, qui vous ramènera en Europe.</li>
+                            
+                        </ul>
+                    </div>
+                    
+                    <div class="pl-14 md:w-[45%] mt-6 md:mt-0 md:pl-12">
+                        <div class="rounded-xl overflow-hidden shadow-lg mb-4">
+                            <img src="https://raw.githubusercontent.com/shepper1/Jericoacoara/main/jour10.jpg" class="w-full h-64 object-cover" alt="Jour 10">
+                        </div>
+                        
+                            <div class="tip-card p-4 rounded-r-lg text-sm mb-2">
+                                <p class="font-bold text-template-ocre mb-1">⚖️ Bagages</p>
+                                <p class="text-gray-700">Pesez vos bagages avant de partir pour l'aéroport pour éviter les mauvaises surprises de surcoût pour l'excédent de poids.</p>
+                            </div>
+                        
+                    </div>
+                </div>
+                
+            </div>
+    </section>
+
+    <footer id="pratique" class="bg-white border-t border-gray-200 pt-16 pb-10 scroll-mt-24">
+        <div class="max-w-6xl mx-auto px-6 grid md:grid-cols-3 gap-10 mb-12">
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2">
+                    <span>☀️</span> Périodes Idéales
+                </h4>
+                
+                    <p class="text-sm text-gray-600 leading-relaxed">Les périodes idéales pour ce séjour sont les mois de juillet à décembre, pour la saison sèche et les vents forts.</p>
+                
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2">
+                    <span>🧳</span> À savoir
+                </h4>
+                <ul class="text-sm text-gray-600 space-y-3">
+
+                        <li><strong>🌡️ :</strong> Climat tropical avec une saison sèche (juillet-décembre). Températures autour de 30°C. Prévoir vêtements légers et un coupe-vent pour le soir.</li>
+                    
+                        <li><strong>💳 :</strong> La monnaie est le Real brésilien (BRL). Peu de distributeurs à Jeri, prévoir du liquide même si les cartes sont de plus en plus acceptées.</li>
+                    
+                        <li><strong>🦟 :</strong> Aucun vaccin obligatoire. Protection solaire (crème, chapeau, lunettes) et anti-moustiques indispensables.</li>
+                    
+                        <li><strong>📶 :</strong> Le Wifi est disponible dans la plupart des hôtels, mais le débit peut être lent. Une eSIM ou SIM locale (ex: Claro) est une bonne option.</li>
+                    
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-serif text-xl mb-4 text-template-roche flex items-center gap-2"><span>🔗</span> Liens Utiles</h4>
+                <ul class="text-sm space-y-3">
+                  <li><a href="https://shepper1.github.io/Jericoacoara/map.html" target="_blank" class="hover:underline flex items-center gap-2"><strong>🗺️ Carte</strong></a></li>
+                    
+                        <li><a href="https://www.jericoacoara.com.br/" target="_blank" class="hover:underline flex items-center gap-2"><strong>📘 Guide de Jericoacoara</strong></a></li>
+                    
+                        <li><a href="https://www.windguru.cz/115" target="_blank" class="hover:underline flex items-center gap-2"><strong>🌬️ Windguru Jericoacoara</strong></a></li>
+                    
+                        <li><a href="https://www.diplomatie.gouv.fr/fr/conseils-aux-voyageurs/conseils-par-pays-destination/bresil/" target="_blank" class="hover:underline flex items-center gap-2"><strong>⚠️ France Diplomatie - Brésil</strong></a></li>
+                    
+                </ul>
+            </div>
+        </div>
+        <div class="text-center border-t border-gray-100 pt-8">
+            <p class="font-serif text-2xl text-template-roche mb-2">Jericoacoara</p>
+            <p class="text-xs text-gray-400">© 2025 - Roadmap</p>
+        </div>
+    </footer>
+
+    <script>
+        // 1. Gestion de l'affichage du menu au scroll
+        const navDesktop = document.getElementById('nav-desktop');
+        const navMobile = document.getElementById('nav-mobile');
+        
+        window.addEventListener('scroll', function() {
+            if (window.scrollY > 300) {
+                navDesktop.classList.remove('-translate-y-full');
+                navMobile.classList.remove('-translate-y-full');
+            } else {
+                navDesktop.classList.add('-translate-y-full');
+                navMobile.classList.add('-translate-y-full');
+            }
+        });
+
+        // 2. Détection de l'étape active
+        const observerOptions = {
+            root: null,
+            rootMargin: '-40% 0px -60% 0px',
+            threshold: 0
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const activeId = entry.target.id;
+                    
+                    document.querySelectorAll('.mobile-link').forEach(link => {
+                        const linkHref = link.getAttribute('href').substring(1);
+                        if (linkHref === activeId) {
+                            link.classList.remove('bg-gray-100', 'text-gray-700');
+                            link.classList.add('bg-template-ocre', 'text-white', 'shadow-md');
+                            link.scrollIntoView({ behavior: 'smooth', inline: 'center', block: 'nearest' });
+                        } else {
+                            link.classList.add('bg-gray-100', 'text-gray-700');
+                            link.classList.remove('bg-template-ocre', 'text-white', 'shadow-md');
+                        }
+                    });
+
+                    document.querySelectorAll('.nav-item-desktop').forEach(link => {
+                        const linkHref = link.getAttribute('href').substring(1);
+                        if (activeId.includes('jour') && linkHref === 'jour-1') {
+                            link.classList.add('text-template-ocre');
+                        } else if (activeId === 'pratique' && linkHref === 'pratique') {
+                            link.classList.add('text-template-ocre');
+                        } else {
+                            link.classList.remove('text-template-ocre');
+                        }
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('div[id^="jour-"], footer#pratique').forEach(section => {
+            observer.observe(section);
+        });
+    </script>
+</body>
+</html>
